@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/input_transaction_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:weightSum="10">
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:padding="5dp"-->
+<!--            android:weightSum="10">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="2"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:text="Wallet"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <Spinner-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="8"-->
+<!--                android:spinnerMode="dropdown" />-->
+
+<!--        </LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:orientation="vertical"
+            android:weightSum="10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="8"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:background="@drawable/ic_money"/>
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="8"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:text="Amount"-->
+<!--                    android:textStyle="bold" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+                    <EditText
+                        android:id="@+id/edt_inputmoney"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="8"
+                        android:hint="@string/hint_input"
+                        android:inputType="number" />
+
+                    <TextView
+                        android:id="@+id/tv_remind_enter_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Enter the amount!"
+                        android:textColor="@color/colorRed"
+                        android:textStyle="italic"
+                        android:visibility="gone"
+                        android:layout_weight="2"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="8"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:background="@drawable/ic_calendar"/>
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="8"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:text="Date/Time"-->
+<!--                    android:textStyle="bold" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+                    <Button
+                        android:id="@+id/btn_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8"
+                        android:background="@drawable/round_button"
+                        android:text="CHOOSE A DAY"
+                        android:layout_marginStart="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_remind_choose_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Choose a day!"
+                        android:textColor="@color/colorRed"
+                        android:textStyle="italic"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/payer_payee_layer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:background="@drawable/ic_people"/>
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_payer_payee"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="2"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:text="Payer"-->
+<!--                    android:textStyle="bold" />-->
+
+                <EditText
+                    android:id="@+id/edt_payer_payee"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8"
+                    android:hint="Who pay?"
+                    android:layout_marginStart="8dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/category_layer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:background="@drawable/ic_category"/>
+
+                <!--                <TextView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="2"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:text="Category"-->
+<!--                    android:textStyle="bold" />-->
+
+                <Spinner
+                    android:id="@+id/spn_Category"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="9"
+                    android:autofillHints="Choose category"
+                    android:spinnerMode="dropdown"
+                    android:layout_marginStart="8dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:background="@drawable/ic_note"/>
+
+<!--                <TextView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="2"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:text="Notes"-->
+<!--                    android:textStyle="bold" />-->
+
+                <EditText
+                    android:id="@+id/edt_notes"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="9"
+                    android:hint="Note something"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <!--            <LinearLayout-->
+            <!--                android:id="@+id/phonenumber_layer"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                android:padding="5dp"-->
+            <!--                android:weightSum="10">-->
+
+            <!--                <TextView-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:layout_weight="3"-->
+            <!--                    android:gravity="center_vertical"-->
+            <!--                    android:text="Contact"-->
+            <!--                    android:textStyle="bold"/>-->
+
+            <!--                <Button-->
+            <!--                    android:id="@+id/btn_phonenumber"-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:layout_weight="7"-->
+            <!--                    android:text="Choose Contact"/>-->
+            <!--                </LinearLayout>-->
+            <LinearLayout
+                android:id="@+id/phonenumber_layer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:weightSum="10">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="8"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:background="@drawable/ic_contact"/>
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="8"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:text="Contact"-->
+<!--                    android:textStyle="bold" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    android:weightSum="10">
+
+                    <Button
+                        android:id="@+id/btn_phonenumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8"
+                        android:background="@drawable/round_button"
+                        android:text="CHOOSE CONTACT"
+                        android:layout_marginStart="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_remind_choose_phone_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Choose a phone number!"
+                        android:textColor="@color/colorRed"
+                        android:textStyle="italic"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_limit_expense"
+    tools:context=".ui.limit.LimitExpenseFragment"
+    android:layout_marginTop="?attr/actionBarSize">
+
+    <!--    <com.google.android.material.appbar.AppBarLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="40dp">-->
+
+    <!--        <androidx.appcompat.widget.Toolbar-->
+    <!--            android:id="@+id/limit_expense_fragment_toolbar"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="?attr/actionBarSize"-->
+    <!--            android:background="?attr/colorPrimary" />-->
+    <!--    </com.google.android.material.appbar.AppBarLayout>-->
+    <TextView
+        android:id="@+id/tv_dont_care_please"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="Please enter your budget for one month:"
+        android:textColor="#4169e1"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:padding="10dp"/>
+
+    <EditText
+        android:id="@+id/et_input_budget_limitation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_below="@id/tv_dont_care_please"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/round_edittext"
+        android:hint="Enter your budget for one month(*)"
+        android:inputType="number" />
+
+    //
+
+    <LinearLayout
+        android:id="@+id/ll_remind_enter_budget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_input_budget_limitation"
+        android:layout_alignStart="@id/et_input_budget_limitation"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_remind_enter_budget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_input_budget_limitation"
+            android:layout_alignStart="@id/et_input_budget_limitation"
+            android:layout_marginBottom="8dp"
+            android:text="Enter your budget for one month"
+            android:textColor="#ff0000"
+            android:textStyle="italic"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_remind_enter_budget"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <Button
+            android:id="@+id/btn_calculate_limit"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/round_button"
+            android:text="Calculate Limit"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_set_limit"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/btn_calculate_limit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_button"
+            android:text="Set Limit"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_delete_limit"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/btn_set_limit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_button"
+            android:text="Delete Limit"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_dont_care_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_btn"
+        android:layout_alignStart="@+id/et_input_budget_limitation"
+        android:layout_alignEnd="@+id/et_input_budget_limitation"
+        android:text="(*)Your limit expenses will be calculated which is based on your budget for 30 days"
+        android:textStyle="italic" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_dont_care_description"
+        android:layout_alignStart="@id/et_input_budget_limitation"
+        android:layout_alignEnd="@id/et_input_budget_limitation"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_edittext"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:text="Your limit expenses: "
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_limit_of_expenses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:gravity="end"
+            android:paddingEnd="10dp"
+            android:text="Limit Here"
+            android:textColor="#ff0000"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>

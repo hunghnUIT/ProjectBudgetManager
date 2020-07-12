@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorGreen">#1FB801</color>
+    <color name="colorRed">#CE0606</color>
+    <color name="colorGrey">#333333</color>
+    <color name="colorLightRed">#EB3030</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorOfWheelPicker">#E5DEEB</color>
+    <color name="colorWhiteMixPurple">#E3E0F5</color>
+    <color name="black_semi_transparent">#A6000000</color>
+    <color name="colorPrimaryApp">#624D6F</color>
+    <color name="colorPrimaryTestPurple">#8A6ACF</color>
+</resources>

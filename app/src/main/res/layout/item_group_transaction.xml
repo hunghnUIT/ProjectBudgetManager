@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="0dp"
+    android:orientation="vertical">
+
+<!--    Under constructing-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_day_group_transaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day"
+            android:textSize="30sp"
+            android:paddingStart="16dp"
+            android:paddingBottom="5dp"
+            android:paddingEnd="5dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tv_month_group_transaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Month"
+            android:layout_toEndOf="@id/tv_day_group_transaction"
+            android:paddingTop="3dp"/>
+        <TextView
+            android:id="@+id/tv_year_group_transaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Year"
+            android:layout_toEndOf="@+id/tv_day_group_transaction"
+            android:layout_alignBottom="@id/tv_day_group_transaction"
+            android:layout_marginBottom="7dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignBottom="@id/tv_day_group_transaction"
+            android:gravity="end"
+            android:paddingBottom="10dp">
+            <TextView
+                android:id="@+id/tv_amount_group_transaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount Here"
+                android:textSize="19sp"
+                android:gravity="right"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" đ"
+                android:textSize="19sp"
+                android:layout_marginEnd="16dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_line_group_transaction"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/tv_day_group_transaction"
+            android:background="@color/cardview_dark_background" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_group_transaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_line_group_transaction"
+            android:layout_marginTop="2dp"/>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/id_home_fragment"
+    android:tag="tag_home_fragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/rl_balance_layout"
+            android:layout_marginTop="?attr/actionBarSize">
+            <TextView
+                android:id="@+id/tv_dont_care_income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbar"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/income"
+                android:textStyle="bold|italic"
+                android:textSize="18sp"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/tv_income"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_alignBaseline="@+id/tv_dont_care_income"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="26dp"
+                android:layout_toEndOf="@id/tv_dont_care_income"
+                android:text="0"
+                android:textColor="@color/colorGreen"
+                android:textStyle="bold|italic"
+                android:textSize="20sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_dont_care_income"
+                android:gravity="end"
+                android:text=" đ"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/colorGreen"
+                android:textStyle="bold|italic"
+                android:textSize="20sp"
+                android:layout_marginEnd="6dp"/>
+
+            <TextView
+                android:id="@+id/tv_dont_care_expense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_dont_care_income"
+                android:layout_alignLeft="@+id/tv_dont_care_income"
+                android:textSize="18sp"
+                android:text="@string/expense"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/tv_expense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tv_dont_care_expense"
+                android:gravity="end"
+                android:layout_marginEnd="26dp"
+                android:layout_marginStart="5dp"
+                android:textSize="20sp"
+                android:layout_toEndOf="@id/tv_dont_care_expense"
+                android:text="0"
+                android:textColor="@color/colorRed"
+                android:textStyle="bold|italic" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_dont_care_expense"
+                android:gravity="end"
+                android:text=" đ"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/colorRed"
+                android:textStyle="bold|italic"
+                android:textSize="20sp"
+                android:layout_marginEnd="6dp"/>
+            <TextView
+                android:id="@+id/tv_dont_care_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_dont_care_expense"
+                android:layout_alignStart="@+id/tv_dont_care_income"
+                android:text="@string/balance"
+                android:textSize="18sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/tv_balance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tv_dont_care_balance"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/tv_dont_care_balance"
+                android:text="0"
+                android:gravity="end"
+                android:layout_marginEnd="26dp"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_dont_care_balance"
+                android:gravity="end"
+                android:text=" đ"
+                android:layout_marginStart="5dp"
+                android:textStyle="bold|italic"
+                android:textSize="20sp"
+                android:layout_marginEnd="6dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_transaction"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tv_balance"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="15.0sp"
+                android:padding="16dp" />
+        </RelativeLayout>
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/float_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        app:fab_addButtonColorNormal="@color/colorPrimaryTestPurple"
+        app:fab_addButtonPlusIconColor="@color/colorWhite"
+        app:fab_labelStyle="@style/menu_labels_style"
+        android:layout_margin="3dp">
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_income"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_icon="@drawable/ic_add"
+            app:fab_colorNormal="@color/colorGreen"
+            app:fab_size="mini"
+            app:fab_title="Income"/>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_expense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/colorLightRed"
+            app:fab_icon="@drawable/ic_minus"
+            app:fab_size="mini"
+            app:fab_title="Expense"/>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_debt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_icon="@drawable/ic_money_off"
+            app:fab_size="mini"
+            app:fab_title="Debt"/>
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

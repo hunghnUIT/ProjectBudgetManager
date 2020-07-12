@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group>
+        <item
+            android:id="@+id/btn_sync_menu"
+            android:title="Sync Data"
+            app:showAsAction="never"/>
+        <item
+            android:id="@+id/btn_view_by_date"
+            android:title="@string/view_by_date"
+            app:showAsAction="never"/>
+        <item
+            android:id="@+id/btn_search_note"
+            android:title="Search By Note"
+            app:showAsAction="ifRoom"
+            app:actionViewClass="android.widget.SearchView"
+            android:icon="@drawable/ic_search"/>
+        <item
+            android:id="@+id/btn_reload_home"
+            android:title="Reload"
+            android:icon="@drawable/ic_autorenew_black_24dp"
+            app:showAsAction="ifRoom"/>
+        <item
+            android:id="@+id/btn_overview_transaction"
+            android:title="Overview Transaction"
+            app:showAsAction="never"/>
+<!--        <item-->
+<!--            android:id="@+id/btn_test"-->
+<!--            android:title="Test post transaction"-->
+<!--            app:showAsAction="never"/>-->
+
+    </group>
+<!--    <item android:title="@string/show_mode">-->
+<!--        <menu>-->
+<!--            <item-->
+<!--                android:id="@+id/btn_view"-->
+<!--                android:title="Show"-->
+<!--                app:showAsAction="never"/>-->
+<!--        </menu>-->
+<!--    </item>-->
+</menu>

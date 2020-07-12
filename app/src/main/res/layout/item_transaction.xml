@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/item_tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
+            android:text="dd/mm/yyyy"
+            android:textSize="15dp"
+            android:textStyle="italic" />
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/item_img_category"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/item_tv_date"
+            android:scaleType="centerCrop"
+            app:civ_border_width="0.1dp" />
+        <!--        app:civ_border_color="#FFFFFF"-->
+
+        <TextView
+            android:id="@+id/item_tv_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/item_img_category"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/item_img_category"
+            android:text="Category Here"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_tv_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_tv_category"
+            android:layout_alignStart="@+id/item_tv_category"
+            android:layout_toEndOf="@+id/item_img_category"
+            android:text="Note Here" />
+
+        <TextView
+            android:id="@+id/item_tv_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/item_tv_date"
+            android:gravity="end"
+            android:text="Phone Number here" />
+
+        <TextView
+            android:id="@+id/item_tv_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/item_img_category"
+            android:layout_toEndOf="@id/item_img_category"
+            android:gravity="end"
+            android:paddingEnd="16dp"
+            android:text="Amount Here" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
